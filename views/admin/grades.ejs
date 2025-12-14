@@ -1,0 +1,42 @@
+<div class="content-wrapper">
+    <div class="container">
+        <h1>Grades Management</h1>
+        <p>Manage student grades for BSIS 1A</p>
+        
+        <div class="table-container">
+            <table>
+                <thead>
+                    <tr>
+                        <th>Student ID</th>
+                        <th>Student Name</th>
+                        <th>Subject</th>
+                        <th>Grade</th>
+                        <th>Action</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <% students.forEach(student => { %>
+                        <% Object.values(subjects).forEach(semester => { %>
+                            <% semester.forEach(subject => { %>
+                                <tr>
+                                    <td><%= student.id %></td>
+                                    <td><%= student.name %></td>
+                                    <td><%= subject.code %> - <%= subject.name %></td>
+                                    <td>-</td>
+                                    <td>
+                                        <button class="btn" style="background-color: #ffc107; color: black;">Edit Grade</button>
+                                    </td>
+                                </tr>
+                            <% }); %>
+                        <% }); %>
+                    <% }); %>
+                </tbody>
+            </table>
+        </div>
+        
+        <div style="margin-top: 2rem; text-align: center;">
+            <button class="btn" style="background-color: #28a745;">Bulk Upload Grades</button>
+            <button class="btn" style="background-color: #17a2b8; margin-left: 0.5rem;">Export Grades</button>
+        </div>
+    </div>
+</div>

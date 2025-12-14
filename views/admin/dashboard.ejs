@@ -1,0 +1,53 @@
+<div class="content-wrapper">
+    <div class="container">
+        <h1>Admin Dashboard</h1>
+        <p>Welcome, <%= user.name %> (Admin)</p>
+        
+        <div class="dashboard-grid">
+            <div class="card">
+                <div class="card-icon">👥</div>
+                <h3 class="card-title">Manage Students</h3>
+                <p class="card-description">View and manage all student records</p>
+                <a href="/admin/students" class="btn" style="margin-top: 1rem; display: inline-block;">View Students</a>
+            </div>
+            
+            <div class="card">
+                <div class="card-icon">📚</div>
+                <h3 class="card-title">Manage Subjects</h3>
+                <p class="card-description">Add and update subjects by semester</p>
+                <a href="/admin/subjects" class="btn" style="margin-top: 1rem; display: inline-block;">View Subjects</a>
+            </div>
+            
+            <div class="card">
+                <div class="card-icon">📊</div>
+                <h3 class="card-title">Grades Management</h3>
+                <p class="card-description">Track and manage student grades</p>
+                <a href="/admin/grades" class="btn" style="margin-top: 1rem; display: inline-block;">Manage Grades</a>
+            </div>
+            
+            <div class="card">
+                <div class="card-icon">📄</div>
+                <h3 class="card-title">Class Reports</h3>
+                <p class="card-description">Generate class-wide reports</p>
+                <a href="/admin/reports/class" class="btn" style="margin-top: 1rem; display: inline-block;">Generate Report</a>
+            </div>
+        </div>
+        
+        <div style="margin-top: 2rem;">
+            <h2>Quick Stats</h2>
+            <div style="display: flex; gap: 2rem; flex-wrap: wrap;">
+                <div style="background: #f0f8ff; padding: 1rem; border-radius: 8px; flex: 1; min-width: 200px;">
+                    <h3>Total Students</h3>
+                    <p style="font-size: 2rem; font-weight: bold; color: #003366;"><%= students.length %></p>
+                </div>
+                
+                <div style="background: #f0fff0; padding: 1rem; border-radius: 8px; flex: 1; min-width: 200px;">
+                    <h3>Total Subjects</h3>
+                    <p style="font-size: 2rem; font-weight: bold; color: #003366;">
+                        <%= Object.values(subjects).reduce((total, semester) => total + semester.length, 0) %>
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
