@@ -1,0 +1,19 @@
+<header class="header">
+    <div class="header-content">
+        <div class="logo-container">
+            <div class="logo">W</div>
+            <h1 class="site-title">WVSU-BSIS EduTrack</h1>
+        </div>
+        <% if (typeof user !== 'undefined' && user) { %>
+            <div class="nav-links">
+                <span style="color: white; margin-right: 1rem;">Welcome, <%= user.name %> (<%= user.role %>)</span>
+                <a href="/auth/logout" class="nav-link logout-btn">Logout</a>
+            </div>
+        <% } else { %>
+            <div class="nav-links">
+                <a href="/" class="nav-link">Home</a>
+                <a href="/login" class="nav-link">Login</a>
+            </div>
+        <% } %>
+    </div>
+</header>

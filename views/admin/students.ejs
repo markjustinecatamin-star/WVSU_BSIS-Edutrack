@@ -1,0 +1,32 @@
+<div class="content-wrapper">
+    <div class="container">
+        <h1>All Students</h1>
+        <p>Manage all students in BSIS 1A</p>
+        
+        <div class="table-container">
+            <table id="students-table">
+                <thead>
+                    <tr>
+                        <th>ID</th>
+                        <th>Name</th>
+                        <th>Role</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <% students.forEach(student => { %>
+                        <tr>
+                            <td><%= student.id %></td>
+                            <td><%= student.name %></td>
+                            <td><%= student.role %></td>
+                        </tr>
+                    <% }); %>
+                </tbody>
+            </table>
+        </div>
+        
+        <div style="margin-top: 2rem;">
+            <input type="text" id="searchInput" onkeyup="searchTable('searchInput', 'students-table')" 
+                   placeholder="Search for students.." style="width: 100%; padding: 0.75rem; margin-bottom: 1rem;">
+        </div>
+    </div>
+</div>

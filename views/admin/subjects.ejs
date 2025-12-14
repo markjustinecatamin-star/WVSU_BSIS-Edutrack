@@ -1,0 +1,119 @@
+<div class="content-wrapper">
+    <div class="container">
+        <h1>Subjects by Semester</h1>
+        <p>Manage subjects for BSIS program</p>
+        
+        <div style="margin-bottom: 2rem;">
+            <label for="yearFilter">Filter by Year Level:</label>
+            <select id="yearFilter" onchange="filterSubjectsByYear(this.value)" style="padding: 0.5rem; margin-left: 1rem;">
+                <option value="all">All Years</option>
+                <option value="first_year">First Year</option>
+                <option value="second_year">Second Year</option>
+            </select>
+        </div>
+        
+        <div class="table-container">
+            <h2>First Year - First Semester</h2>
+            <table id="first-year-first-sem-table">
+                <thead>
+                    <tr>
+                        <th>Code</th>
+                        <th>Name</th>
+                        <th>Lec</th>
+                        <th>Lab</th>
+                        <th>Units</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <% subjects.first_year_first_semester.forEach(subject => { %>
+                        <tr>
+                            <td><%= subject.code %></td>
+                            <td><%= subject.name %></td>
+                            <td><%= subject.lec %></td>
+                            <td><%= subject.lab %></td>
+                            <td><%= subject.units %></td>
+                        </tr>
+                    <% }); %>
+                </tbody>
+            </table>
+        </div>
+        
+        <div class="table-container" style="margin-top: 2rem;">
+            <h2>First Year - Second Semester</h2>
+            <table id="first-year-second-sem-table">
+                <thead>
+                    <tr>
+                        <th>Code</th>
+                        <th>Name</th>
+                        <th>Lec</th>
+                        <th>Lab</th>
+                        <th>Units</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <% subjects.first_year_second_semester.forEach(subject => { %>
+                        <tr>
+                            <td><%= subject.code %></td>
+                            <td><%= subject.name %></td>
+                            <td><%= subject.lec %></td>
+                            <td><%= subject.lab %></td>
+                            <td><%= subject.units %></td>
+                        </tr>
+                    <% }); %>
+                </tbody>
+            </table>
+        </div>
+        
+        <div class="table-container" style="margin-top: 2rem;">
+            <h2>Second Year - First Semester</h2>
+            <table id="second-year-first-sem-table">
+                <thead>
+                    <tr>
+                        <th>Code</th>
+                        <th>Name</th>
+                        <th>Lec</th>
+                        <th>Lab</th>
+                        <th>Units</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <% subjects.second_year_first_semester.forEach(subject => { %>
+                        <tr>
+                            <td><%= subject.code %></td>
+                            <td><%= subject.name %></td>
+                            <td><%= subject.lec %></td>
+                            <td><%= subject.lab %></td>
+                            <td><%= subject.units %></td>
+                        </tr>
+                    <% }); %>
+                </tbody>
+            </table>
+        </div>
+        
+        <div class="table-container" style="margin-top: 2rem;">
+            <h2>Second Year - Second Semester</h2>
+            <table id="second-year-second-sem-table">
+                <thead>
+                    <tr>
+                        <th>Code</th>
+                        <th>Name</th>
+                        <th>Lec</th>
+                        <th>Lab</th>
+                        <th>Units</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <% subjects.second_year_second_semester.forEach(subject => { %>
+                        <tr>
+                            <td><%= subject.code %></td>
+                            <td><%= subject.name %></td>
+                            <td><%= subject.lec %></td>
+                            <td><%= subject.lab %></td>
+                            <td><%= subject.units %></td>
+                        </tr>
+                    <% }); %>
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>

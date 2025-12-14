@@ -1,0 +1,45 @@
+<div class="content-wrapper">
+    <div class="container">
+        <h1>Student Dashboard</h1>
+        <p>Welcome, <%= user.name %> (Student)</p>
+        
+        <div class="dashboard-grid">
+            <div class="card">
+                <div class="card-icon">📚</div>
+                <h3 class="card-title">My Subjects</h3>
+                <p class="card-description">View your enrolled subjects</p>
+                <a href="/student/subjects" class="btn" style="margin-top: 1rem; display: inline-block;">View Subjects</a>
+            </div>
+            
+            <div class="card">
+                <div class="card-icon">📊</div>
+                <h3 class="card-title">My Grades</h3>
+                <p class="card-description">Check your grades and progress</p>
+                <a href="/student/grades" class="btn" style="margin-top: 1rem; display: inline-block;">View Grades</a>
+            </div>
+            
+            <div class="card">
+                <div class="card-icon">🔐</div>
+                <h3 class="card-title">Change Password</h3>
+                <p class="card-description">Update your account password</p>
+                <a href="/student/change-password" class="btn" style="margin-top: 1rem; display: inline-block;">Change Password</a>
+            </div>
+            
+            <div class="card">
+                <div class="card-icon">📄</div>
+                <h3 class="card-title">Personal Report</h3>
+                <p class="card-description">Generate your personal report</p>
+                <a href="/student/reports/personal" class="btn" style="margin-top: 1rem; display: inline-block;">Generate Report</a>
+            </div>
+        </div>
+        
+        <div style="margin-top: 2rem;">
+            <h2>Student Information</h2>
+            <div style="background: #f9f9f9; padding: 1.5rem; border-radius: 8px;">
+                <p><strong>Name:</strong> <%= student.name %></p>
+                <p><strong>ID:</strong> <%= student.id %></p>
+                <p><strong>Role:</strong> <%= student.role %></p>
+            </div>
+        </div>
+    </div>
+</div>
